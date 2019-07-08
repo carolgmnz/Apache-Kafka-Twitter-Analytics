@@ -8,6 +8,7 @@ Los objetivos de este proyecto se han centrado en:
 
 
 INSTALACIÓN DE KAFKA
+
 Para poder ejecutar este código es necesario instalar Apache Kafka en nuestro sistema operativo. Para ello, tan sólo es necesario buscar la página web de Apache kafka (https://kafka.apache.org) y descargar la última versión disponible. A continuación, se descomprime el fichero descargado en el directorio elegido y, en caso de windows, se debe crear una variable de entorno denominada KAFKA HOME, que haga referencia a la ruta/directorio de instalación.
 Una vez instalado, se debe inicializar Zookeeper en una terminal y el servidor de Kafka en otra. Es esencial este paso, ya que Kafka requiere de Zookeeper activo para funcionar, pues es el encargado de manejar los brokers y ayudar en la elecci ́on de l ́ıderes para particiones.
 Con la finalidad de que el código sea tolerante a fallos y tenga un buen rendimiento, se deberían crear varios brokers, sin embargo, como este proyecto será desplegado en local únicamente podremos contar con un broker.
@@ -15,6 +16,7 @@ En cuanto a los topics, se deben crear dos: en el primero se almacenarán los tw
 
 
 DETALLES DEL CÓDIGO
+
 Aparecen 4 scripts:
 - Productor: recoge todos los tweets con el hashtag escogido y los produzca en el topic tweetsRaw.
 - Consumidor-Productor: obtiene los tweets recogidos en el topic anterior, los procesa y los vuelve a reinsertar en un segundo topic (tweets- Processed). Utilizaremos este paso intermedio para sustituir ciertas palabras clave, como los @user de cada partido, por el nombre de los mismos, con el fin de hacer las comparaciones más equitativas.
