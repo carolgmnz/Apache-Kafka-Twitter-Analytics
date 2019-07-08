@@ -7,12 +7,14 @@ Los objetivos de este proyecto se han centrado en:
 - Analizar una temática que afecte a la sociedad actual y que sea tendencia en Twitter.
 
 
+
 INSTALACIÓN DE KAFKA
 
 Para poder ejecutar este código es necesario instalar Apache Kafka en nuestro sistema operativo. Para ello, tan sólo es necesario buscar la página web de Apache kafka (https://kafka.apache.org) y descargar la última versión disponible. A continuación, se descomprime el fichero descargado en el directorio elegido y, en caso de windows, se debe crear una variable de entorno denominada KAFKA HOME, que haga referencia a la ruta/directorio de instalación.
 Una vez instalado, se debe inicializar Zookeeper en una terminal y el servidor de Kafka en otra. Es esencial este paso, ya que Kafka requiere de Zookeeper activo para funcionar, pues es el encargado de manejar los brokers y ayudar en la elecci ́on de l ́ıderes para particiones.
 Con la finalidad de que el código sea tolerante a fallos y tenga un buen rendimiento, se deberían crear varios brokers, sin embargo, como este proyecto será desplegado en local únicamente podremos contar con un broker.
 En cuanto a los topics, se deben crear dos: en el primero se almacenarán los tweets “en crudo”, para ser posteriormente consumidos para procesarlos y guardar los datos de interés en un segundo topic.
+
 
 
 DETALLES DEL CÓDIGO
